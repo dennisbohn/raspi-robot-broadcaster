@@ -12,10 +12,10 @@ class VideoBroadcaster {
     this.videoCamera = new VideoCamera(options.video);
 
     // Connect to websocket
-    this.socket = io(options.server.url);
+    this.socket = io(options.server);
 
     // Send start chunks in case of reconnection
-    console.log('Connect to "' + options.server.url);
+    console.log('Connect to "' + options.server);
     this.socket.on("connect", this.onConnect);
 
     // Send chunks
